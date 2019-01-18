@@ -1,0 +1,25 @@
+##Qué hace el script
+Usa los archivos genes_absence_presence.csv y pan_genome_reference.fa (generados de Roary)
+Del archivo csv toma los componentes del heade (col 1 y col 15), las busca en el archivo fasta y lo redirecciona junto con su secuencia del gen a otro archivo de resultados en formato fasta. Siempre y cuando pertenezcan a los genes core, es decir que col 4 = número de organismos total con el que se hizo el ensayo. 
+Col 1: Nombre del gen
+Col 4: número de aislados
+Col 15: Etiqueta de la anotación
+
+##Como se llama el script
+pan_genome_fasta_extractor.sh
+
+##Como se corre
+
+bash pan_genome_fasta_extractor.sh
+
+##Que hace de manera general
+Da los core genes en un archivo fasta de resultados utilizando los csv y pan_genome_reference.fa
+
+##Cual es el resulatado (donde se crea el resultado)
+El archivo core_genome.fa
+results/core_genome.fa
+
+##Que contiene el resultado
+Los genes del core genome agrupados en formato fasta
+
+Atte: Judith y Ram 
