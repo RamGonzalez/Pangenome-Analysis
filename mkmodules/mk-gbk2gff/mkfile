@@ -1,0 +1,17 @@
+#Cargando variables configurables desde el archivo config.mk
+< config.mk
+
+#test/data/genome3_vinelandii.gff: test/data/genome3_vinelandii.gbk
+%.gff:Q: %.gbk 
+	echo "[DEBUG] converting gbk to gff"
+	echo "[DEBUG] my target is $target"
+	echo "[DEBUG] my prereq is $prereq"
+	perl $CONVERSION_SCRIPT $prereq -o - > $target.build \
+	&& mv $target.build $target
+
+%.gff:Q: %.gbff
+        echo "[DEBUG] converting gbff to gff"
+        echo "[DEBUG] my target is $target"
+        echo "[DEBUG] my prereq is $prereq"
+        perl $CONVERSION_SCRIPT $prereq -o - > $target.build \
+	&& mv $target.build $target
