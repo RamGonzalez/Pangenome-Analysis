@@ -1,0 +1,8 @@
+#cargando variables configurables desde el archivo config.mk
+<config.mk
+
+%_roary:Q: %_aggregated
+	echo "[DEBUG] Corriendo roary a partir de los archivos $prereq"
+	echo "[DEBUG] Los resultados los voy a guardar en $target"
+	roary $prereq/*.gff -p "$ROARY_THREADS" -i "$ROARY_IDENT_CUTOFF" -e -n -f $target.build \
+	&& mv $target.build $target 

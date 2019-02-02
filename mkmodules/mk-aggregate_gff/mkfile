@@ -1,0 +1,10 @@
+#Este mk hace una orden virtual. Estructura: ORDEN:VQ
+#Se mueven todos los archivos que encuentra el comando find al directorio OUTPUT_DIR
+
+##Cargando variables configurables desde el archivo config.mk
+< config.mk
+
+AGGREGATE_GFF_FILES:VQ:
+	echo "[DEBUG] - Agregando todos los GFFs existentes"
+	mkdir -p "$OUTPUT_DIR"_aggregated
+	cp $(find -L . -type f -name "*.gff") "$OUTPUT_DIR"_aggregated
